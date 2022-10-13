@@ -696,6 +696,62 @@ class StringPattern{
 			i++;
 			
 		}
+		
+		static void lpattern2(){
+		int n=3;
+		System.out.println("Enter n : ");
+		Scanner sc = new Scanner(System.in);
+		n = sc.nextInt();
+		int row = 2*n;
+		int col = 3+(n*(n-1));
+		
+		System.out.println("ROW : "+row);
+		System.out.println("COL : "+col);
+		
+		int i=1;
+		int len;
+		while(i<=2){
+			if(i==1){
+				for(int j=1;j<=n;j++){
+					if(j==n){
+						len=n+2;
+					}else{
+						len=n+1;
+					}
+					for(int k=1;k<=len+1;k++){
+						if(k==1 || (j==n&&k==n+3)){
+							System.out.print("@");
+						}
+						else if(k==2){
+							for(int l=1;l<=((n-1)*(j-1));l++){
+								//System.out.print(len);
+								System.out.print(" ");
+							}
+						}
+						else{
+							System.out.print("*");
+						}
+					}
+					System.out.println();				
+				}
+			}
+			
+			else{
+				for(int j=1;j<=n;j++){
+					for(int k=1;k<=col;k++){
+						if(k==1||k==col){
+							System.out.print("@");
+						}else{
+							System.out.print(" ");
+						}
+					}System.out.println("");
+				}
+			}
+			i++;
+		  }
+	      }
+
+		
 	}
 
 
@@ -719,6 +775,7 @@ class StringPattern{
 		//invertedPyramid();
 		//lPattern();
 		rocketFly();
+		lpattern2();
 		
 		
 	}
